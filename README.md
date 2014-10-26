@@ -43,7 +43,7 @@ var updateDate = function(){
 		var date = moment().format("MMMM Do, YY");
 		$('#date').text(date);
 	}
-	```
+```
 
 
 #### Time
@@ -64,7 +64,7 @@ var updateTime = function (){
 			$('#time').text(time);
 			
 	}
-	```
+```
 	
 
 ####Font Style
