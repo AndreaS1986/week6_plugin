@@ -92,4 +92,4 @@ __in css__
 ## Examples
 You can [see this plugin in action here][example].
 
-[example]: http://AndreaS1986/github.io/week6_plugin
+[example]: https://github.com/AndreaS1986/week6_plugin.git
