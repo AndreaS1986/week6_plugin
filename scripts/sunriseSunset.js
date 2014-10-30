@@ -1,24 +1,31 @@
 //create a new function and attach it to jQuery ($)
 $.fn.sunriseSunset = function (){ 
 
+// var startime = setInterval(function(){setup()}, 1000);
 
 	var updateTime = function (){
 			var time = moment().format("h:mm a");
-			$('#time').text(time);
+			$('#time').html(time);
 			
 	}
 
 	var updateDate = function(){
 		var date = moment().format("MMMM Do, YYYY");
-		$('#date').text(date);
+		$('#date').html(date);
 	}
 
-	var datetoday = new Date();
-	var timenow = datetoday.getHours();
+	var datetoday;
+	var timenow;
 
-	console.log(timenow);
 
-	function changeStuff() {
+	function checkAndChangeStuff() {
+
+		datetoday = new Date();
+		timenow = datetoday.getHours();
+
+
+		$('body').removeClass();
+
 		if ( timenow == 17) {
 			$('body').addClass('sunset_rise_17');
 		} else if (timenow === 18 ) {
@@ -69,13 +76,21 @@ $.fn.sunriseSunset = function (){
 			$('body').addClass('sunset_rise_15');
 		} else if (timenow === 16){
 			$('body').addClass('sunset_rise_16');
+		} else{
+
 		}
+
 	}
 
 	function setup(){
 		updateTime();
 		updateDate();
-		changeStuff();
+		checkAndChangeStuff();
 	}
-	 return setup();
+
+	window.setInterval(function(){
+		setup(); 
+	},1000);
+
+	 // return setup();
 	}
